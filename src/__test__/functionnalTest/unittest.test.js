@@ -1,4 +1,4 @@
-import getCurrentDate from "../../components/header/headerhelper";
+import getCurrentDate from '../../components/header/headerhelper';
 
 describe('getCurrentDate', () => {
   test('getCurrentDate give right result', () => {

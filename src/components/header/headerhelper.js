@@ -7,7 +7,7 @@ const getCurrentDate = () => {
     'Wednesday',
     'Thursday',
     'Friday',
-    'Saturday'
+    'Saturday',
   ];
   const yearMonths = [
     'January',

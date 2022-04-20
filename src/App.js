@@ -1,5 +1,8 @@
+import { React } from 'react';
+import Header from './components/header/header';
+
 const App = () => (
-  <h1>Hello world !</h1>
+  <Header total={8} done={3} />
 );
 
 export default App;
