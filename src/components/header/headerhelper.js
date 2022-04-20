@@ -25,3 +25,5 @@ const getCurrentDate = () => {
   ];
   return [weekDay[today.getDay()], today.getDate(), yearMonths[today.getMonth()]];
 };
+
+export default getCurrentDate;
