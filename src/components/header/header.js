@@ -2,6 +2,7 @@ import { React } from 'react';
 import Typography from '@mui/material/Typography';
 import PropTypes from 'prop-types';
 import getCurrentDate from './headerhelper';
+import './header.css';
 
 const Header = (props) => {
   const { total, done } = props;
@@ -9,21 +10,20 @@ const Header = (props) => {
   const statisticsTitle = ['Total', 'Remaining', 'Done'];
   const [day, dt, month] = getCurrentDate();
   return (
-    <header>
-      <Typography variant="h1">
+    <header className="wrapper">
+      <Typography variant="h1" className="date-day">
         {`${day}, ${dt}th`}
         {' '}
       </Typography>
-      ;
-      <span>{month}</span>
+      <p className="date-month">{month}</p>
       <div className="stat-wrapper">
         {[0, 1, 2].map((index) => (
           <div className="stat-item" key={index}>
-            <Typography variant="h2">
+            <Typography variant="h2" className="item-name">
               {statistics[index]}
               {' '}
             </Typography>
-            <p>{statisticsTitle[index]}</p>
+            <p className="item-value">{statisticsTitle[index]}</p>
           </div>
         ))}
       </div>

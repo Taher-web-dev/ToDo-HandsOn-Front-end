@@ -1,0 +1,41 @@
+.wrapper {
+  width: 100%;
+  background: linear-gradient(90deg, rgb(103, 96, 97), rgb(73, 122, 207), rgb(51, 152, 220));
+}
+
+.date-day {
+  color: white;
+  text-align: center;
+}
+
+.date-month {
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stat-wrapper {
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-name {
+  color: white;
+  margin-bottom: 0;
+}
+
+.item-value {
+  color: white;
+  margin-top: 0;
+  font-weight: 575;
+}
