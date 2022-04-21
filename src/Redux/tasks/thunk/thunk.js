@@ -1,4 +1,4 @@
-import { startFetchtasks, getTasks, fetchTasksfailure } from "../actions/actions";
+import { startFetchtasks, getTasks, fetchTasksfailure } from '../actions/actions';
 
 const url = 'https://afternoon-anchorage-40437.herokuapp.com/api/v1/tasks';
 export const fetchTasks = () => fetch(url);
