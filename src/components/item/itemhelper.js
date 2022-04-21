@@ -1,5 +1,5 @@
 const url = 'https://afternoon-anchorage-40437.herokuapp.com/api/v1/tasks/';
-export const updateTask = (id, task) => {
+const updateTask = (id, task) => {
   const itemUrl = `${url}${id}`;
   return (fetch(itemUrl, {
     method: 'PUT',
@@ -9,3 +9,5 @@ export const updateTask = (id, task) => {
     body: JSON.stringify({ task }),
   }));
 };
+
+export default updateTask;

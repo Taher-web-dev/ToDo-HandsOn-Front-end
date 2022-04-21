@@ -1,6 +1,7 @@
-import { updateTask } from "../../components/item/itemhelper";
+import updateTask from '../../components/item/itemhelper';
+
 describe('update task with given data', () => {
-  test('update Task given correct data', async() => {
+  test('update Task given correct data', async () => {
     const id = 1;
     const task = {
       done: true,
