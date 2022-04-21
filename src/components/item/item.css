@@ -1,0 +1,50 @@
+.item-wrapper {
+  display: flex;  
+  align-items: center;
+  border-bottom: 1px solid #f8f8f8;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.ckeck-icon {
+  margin-left: 2.5%;
+  margin-right: 5%;
+}
+.task-desc {
+  outline: none;
+  border: none;
+  color: rgb(101, 98, 90);
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 2.5% auto 2.5% 0;
+  background-color: white;
+  padding: 2.5%;
+}
+
+.edit-icon {
+  margin-right: 2.5%;
+  color: rgb(101, 98, 90);
+  cursor: pointer;
+  border: 1px solid white;
+  padding: 0.5%;
+}
+
+.delete-icon {
+  margin-right: 2.5%;
+  color: rgb(101, 98, 90);
+  cursor: pointer;
+  border: 1px solid #f8f8f8;
+  padding: 0.5%;
+}
+
+.edit-icon:hover {
+  border-color: rgb(246, 250, 253);
+  border-radius: 50%;
+  background-color: rgb(246, 250, 253);
+}
+
+.delete-icon:hover {
+  border-color: white;
+  border-radius: 50%;
+  background-color: white;
+}

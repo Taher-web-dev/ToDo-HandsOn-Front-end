@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addAlert } from '../../Redux/alert/alert';
 import updateTask from './itemhelper';
+import './item.css';
 
 const Item = (props) => {
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -39,6 +40,8 @@ const Item = (props) => {
   };
   const editTask = (e) => {
     e.target.style.display = 'none';
+    const wrapper = document.querySelector('.item-wrapper');
+    wrapper.style.backgroundColor = '#f8f8f8';
     const deleteIcon = document.querySelector('.delete-icon');
     deleteIcon.style.display = 'block';
     const taskDescription = document.querySelector('.task-desc');
@@ -48,6 +51,7 @@ const Item = (props) => {
       elem.disabled = true;
       e.target.style.display = 'block';
       deleteIcon.style.display = 'none';
+      wrapper.style.backgroundColor = '#fff';
       const description = elem.value;
       const task = {
         description,
@@ -66,6 +70,7 @@ const Item = (props) => {
         elem.disabled = true;
         e.target.style.display = 'block';
         deleteIcon.style.display = 'none';
+        wrapper.style.backgroundColor = '#fff';
         const description = elem.value;
         const task = {
           description,
