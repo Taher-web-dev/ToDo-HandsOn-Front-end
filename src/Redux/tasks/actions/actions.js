@@ -1,6 +1,6 @@
-const START_FETCH_TASKS = 'TODO/TASKS/START';
-const GET_TASKS = 'TODO/TASKS/GET';
-const FAILURE_FETCH_TASKS = 'TODO/TASKS/FAILURE';
+export const START_FETCH_TASKS = 'TODO/TASKS/START';
+export const GET_TASKS = 'TODO/TASKS/GET';
+export const FAILURE_FETCH_TASKS = 'TODO/TASKS/FAILURE';
 
 export const startFetchtasks = () => ({
   type: START_FETCH_TASKS,
