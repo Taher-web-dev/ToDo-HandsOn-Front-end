@@ -1,4 +1,4 @@
-const getTodaytask = (tasks) => {
+export const getTodaytask = (tasks) => {
   const { data } = tasks;
   let today = new Date();
   today = `${today.getFullYear()}-${today.getMonth() + 1 < 10 ? `0${today.getMonth() + 1}` : today.getMonth() + 1}-${today.getDate()}`;
@@ -10,4 +10,3 @@ export const fulfilledTaskcompter = (todayTasks) => {
   const fulfilledTasks = todayTasks.filter((task) => task.done);
   return fulfilledTasks.length;
 };
-export default getTodaytask;

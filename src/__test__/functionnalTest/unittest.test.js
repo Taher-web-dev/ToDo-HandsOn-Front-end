@@ -1,5 +1,5 @@
 import getCurrentDate from '../../components/header/headerhelper';
-import getTodaytask from '../../components/todo/todohelper';
+import { getTodaytask, fulfilledTaskcompter } from '../../components/todo/todohelper';
 
 describe('getCurrentDate', () => {
   test('getCurrentDate give right result', () => {
@@ -38,5 +38,25 @@ describe('getTodaytask', () => {
       done: true,
       day: '2022-04-21',
     }]);
+  });
+});
+
+describe('fulfilledTaskcompter', () => {
+  test('return the number of fulfilled tasks.', () => {
+    const tasks = [
+      {
+        description: 'do my daily workout',
+        done: false,
+      },
+      {
+        description: 'visite my parents',
+        done: false,
+      },
+      {
+        description: 'fix my car',
+        done: true,
+      },
+    ];
+    expect(fulfilledTaskcompter(tasks)).toBe(1);
   });
 });
