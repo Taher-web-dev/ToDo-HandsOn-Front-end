@@ -6,4 +6,8 @@ const getTodaytask = (tasks) => {
   return todayTask;
 };
 
+export const fulfilledTaskcompter = (todayTasks) => {
+  const fulfilledTasks = todayTasks.filter((task) => task.done);
+  return fulfilledTasks.length;
+};
 export default getTodaytask;
