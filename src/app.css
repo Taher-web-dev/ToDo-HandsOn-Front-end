@@ -14,14 +14,16 @@
 .app-title {
   color: white;
   font-family: Roboto, HelveticaNeue, Arial, sans-serif;
-  font-size: 13px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 7.5rem;
   margin-top: 0;
+  height: 115px;
+  text-align: center;
 }
 
 .app-desc {
   color: white;
   font-family: Roboto, HelveticaNeue, Arial, sans-serif;
   margin-top: 0;
+  text-align: center;
 }

@@ -37,8 +37,17 @@ const Item = (props) => {
       } else {
         taskItem.style.textDecoration = 'none';
       }
+      dispatch(addAlert(message));
+    } else {
+      let msg;
+      if (checked) {
+        msg = 'Task updated successfully to fullfilled.';
+      } else {
+        msg = 'Task updated successfully to not fulfilled.';
+      }
+      dispatch(addAlert(msg));
+      dispatch(thunkTasks());
     }
-    dispatch(addAlert(message));
   };
   const editTask = (e) => {
     e.target.style.display = 'none';
@@ -64,6 +73,9 @@ const Item = (props) => {
       if (status === 'Error') {
         dispatch(addAlert(message));
         dispatch(thunkTasks());
+      } else {
+        const msg = 'Task description updated successfully!';
+        dispatch(addAlert(msg));
       }
     });
     taskDescription.addEventListener('keydown', async (event) => {
@@ -83,6 +95,9 @@ const Item = (props) => {
         if (status === 'Error') {
           dispatch(addAlert(message));
           dispatch(thunkTasks());
+        } else {
+          const msg = 'Task description updated successfully!';
+          dispatch(addAlert(msg));
         }
       }
     });

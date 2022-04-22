@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { Typography } from '@mui/material';
+import Alert from 'react-bootstrap/Alert';
 import Todo from './components/todo/todo';
 import { thunkTasks } from './Redux/tasks/thunk/thunk';
 import { resetAlert } from './Redux/alert/alert';
@@ -25,13 +25,15 @@ const App = () => {
         {
         alert
         && (
-        <div className="alert alert-warning" role="alert">
+        <Alert variant="warning">
           { alert }
-        </div>
+        </Alert>
         )
       }
-        <p className="app-title" style={{ fontWeight: '400' }}> Todo List</p>
-        <p className="app-desc" style={{ fontSize: '22px' }}>
+        <p className="app-title" style={{ fontWeight: '400' }}>
+          Todo List
+        </p>
+        <p className="app-desc" style={{ fontSize: '24px' }}>
           Create your todo list, bring things on schedule
         </p>
       </div>

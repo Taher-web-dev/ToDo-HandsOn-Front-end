@@ -7,6 +7,7 @@
 .today-title {
   color: rgb(88, 84, 81);
   text-align: center;
+  padding-top: 1%;
 }
 
 .add-task-btn {
@@ -15,9 +16,9 @@
   align-items: center;
   border: 1px solid white;
   border-radius: 6px;
-  width: 40%;
-  margin-left: 30%;
-  padding: 0 5%;
+  width: 44%;
+  margin-left: 28%;
+  padding: 2.5% 5%;
   box-sizing: border-box;
   justify-content: space-between;
   position: absolute;
@@ -27,6 +28,7 @@
 .btn-title {
   color: white;
   font-weight: 600;
+  margin: 0;
 }
 
 .functional-part {
