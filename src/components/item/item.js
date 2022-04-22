@@ -6,7 +6,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addAlert } from '../../Redux/alert/alert';
-import updateTask from './itemhelper';
+import { updateTask, deleteTask } from './itemhelper';
 import { thunkTasks } from '../../Redux/tasks/thunk/thunk';
 import './item.css';
 
@@ -49,6 +49,10 @@ const Item = (props) => {
       dispatch(thunkTasks());
     }
   };
+  const deleteTask = (e)=> {
+    const task = e.target.parentNode;
+
+  }
   const editTask = (e) => {
     e.target.style.display = 'none';
     const wrapper = e.target.parentNode;
@@ -107,7 +111,7 @@ const Item = (props) => {
       <Checkbox {...label} Checked={done} className="ckeck-icon" onChange={taskFulfilled} />
       <input disabled style={{ textDecoration: done ? 'line-through 3px rgb(0, 0, 255)' : 'none' }} className="task-desc" defaultValue={description} />
       <MoreVertIcon className="edit-icon" onClick={editTask} />
-      <DeleteIcon style={{ display: 'none' }} className="delete-icon" />
+      <DeleteIcon style={{ display: 'none' }} className="delete-icon" onClick={deleteTask} />
     </div>
   );
 };

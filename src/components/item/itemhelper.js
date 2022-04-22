@@ -1,5 +1,5 @@
 const url = 'https://afternoon-anchorage-40437.herokuapp.com/api/v1/tasks/';
-const updateTask = (id, task) => {
+export const updateTask = (id, task) => {
   const itemUrl = `${url}${id}`;
   return (fetch(itemUrl, {
     method: 'PUT',
@@ -10,4 +10,12 @@ const updateTask = (id, task) => {
   }));
 };
 
-export default updateTask;
+export const deleteTask = (id) => {
+  const itemUrl = `${url}${id}`;
+  return (fetch(itemUrl, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json', 
+    },
+  }));
+};

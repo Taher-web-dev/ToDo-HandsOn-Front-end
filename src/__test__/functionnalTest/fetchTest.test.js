@@ -1,4 +1,4 @@
-import updateTask from '../../components/item/itemhelper';
+import { updateTask } from '../../components/item/itemhelper';
 import { fetchTasks } from '../../Redux/tasks/thunk/thunk';
 
 describe('update task with given data', () => {
