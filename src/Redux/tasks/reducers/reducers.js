@@ -1,4 +1,4 @@
-import { START_FETCH_TASKS, GET_TASKS, FAILURE_FETCH_TASKS } from "../actions/actions";
+import { START_FETCH_TASKS, GET_TASKS, FAILURE_FETCH_TASKS } from '../actions/actions';
 
 const tasksReducer = (state = {}, action) => {
   switch (action.type) {

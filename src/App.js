@@ -1,12 +1,16 @@
-import { React } from 'react';
-import Header from './components/header/header';
-import Item from './components/item/item';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import Todo from './components/todo/todo';
+import { thunkTasks } from './Redux/tasks/thunk/thunk';
 
-const App = () => (
-  <div>
-    <Header total={8} done={3} />
-    <Item done={false} description="do my daily workout" id={1} />
-  </div>
-);
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => dispatch(thunkTasks()), []);
+  return (
+    <div>
+      <Todo />
+    </div>
+  );
+};
 
 export default App;
