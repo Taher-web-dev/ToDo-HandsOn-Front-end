@@ -11,7 +11,7 @@ const Header = (props) => {
   const [day, dt, month] = getCurrentDate();
   return (
     <header className="wrapper">
-      <Typography variant="h1" className="date-day">
+      <Typography variant="h1" className="date-day" style={{ fontSize: '36px', fontWeight: '700' }}>
         {`${day}, ${dt}th`}
         {' '}
       </Typography>
@@ -19,7 +19,7 @@ const Header = (props) => {
       <div className="stat-wrapper">
         {[0, 1, 2].map((index) => (
           <div className="stat-item" key={index}>
-            <Typography variant="h2" className="item-name">
+            <Typography variant="h4" className="item-name">
               {statistics[index]}
               {' '}
             </Typography>

@@ -1,6 +1,7 @@
 .wrapper {
   width: 100%;
-  background: linear-gradient(90deg, rgb(103, 96, 97), rgb(73, 122, 207), rgb(51, 152, 220));
+  height: 150px;
+  background: linear-gradient(90deg, rgb(110, 96, 200), rgb(73, 122, 207), rgb(51, 152, 220));
 }
 
 .date-day {
@@ -20,7 +21,7 @@
   width: 90%;
   margin-left: 5%;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 
 .stat-item {
