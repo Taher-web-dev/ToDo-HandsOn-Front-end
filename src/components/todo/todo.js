@@ -15,13 +15,15 @@ const Todo = () => {
   return (
     <div className="todo-wrapper">
       <Header total={total} done={fulfilleds} />
-      <Typography variant="h4" className="today-title" style={{ fontSize: '24px', fontWeight: '550' }}> Tasks for today </Typography>
-      {todayTasks.map((task) => (
-        <Item description={task.description} id={task.id} done={task.done} key={task.id} />))}
-      <button type="submit" className="add-task-btn">
-        <AddIcon style={{ color: 'white' }} />
-        <p className="btn-title">Add new item </p>
-      </button>
+      <div className="functional-part">
+        <Typography variant="h4" className="today-title" style={{ fontSize: '24px', fontWeight: '550' }}> Tasks for today </Typography>
+        {todayTasks.map((task) => (
+          <Item description={task.description} id={task.id} done={task.done} key={task.id} />))}
+        <button type="submit" className="add-task-btn">
+          <AddIcon style={{ color: 'white' }} />
+          <p className="btn-title">Add new item </p>
+        </button>
+      </div>
     </div>
   );
 };

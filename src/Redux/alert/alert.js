@@ -10,12 +10,12 @@ export const resetAlert = () => ({
   type: RESET_ALERT,
 });
 
-export const alertReducer = (state = '', action) => {
+export const alertReducer = (state = null, action) => {
   switch (action.type) {
     case ADD_ALERT:
       return action.payload;
     case RESET_ALERT:
-      return '';
+      return null;
     default:
       return state;
   }

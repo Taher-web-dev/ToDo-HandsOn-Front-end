@@ -7,7 +7,7 @@ import './header.css';
 const Header = (props) => {
   const { total, done } = props;
   const statistics = [total, done, total - done];
-  const statisticsTitle = ['Total', 'Remaining', 'Done'];
+  const statisticsTitle = ['Total', 'Done', 'Remaining'];
   const [day, dt, month] = getCurrentDate();
   return (
     <header className="wrapper">

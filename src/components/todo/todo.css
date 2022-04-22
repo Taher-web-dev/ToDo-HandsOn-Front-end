@@ -1,8 +1,7 @@
 .todo-wrapper{
   width: 30%;
   margin-left: 10%;
-  min-height: 400px;
-  position: relative;
+  margin-right: 5%;
 }
 
 .today-title {
@@ -28,4 +27,10 @@
 .btn-title {
   color: white;
   font-weight: 600;
+}
+
+.functional-part {
+  background-color: white;
+  position: relative;
+  min-height: 350px;
 }

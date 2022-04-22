@@ -1,0 +1,27 @@
+.app-wrapper {
+  display: flex;
+  background: linear-gradient(rgb(33, 117, 163), rgb(210, 227, 237));
+  align-items: center;
+}
+
+.app-description {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-title {
+  color: white;
+  font-family: Roboto, HelveticaNeue, Arial, sans-serif;
+  font-size: 13px;
+  margin-bottom: 0;
+  font-size: 7.5rem;
+  margin-top: 0;
+}
+
+.app-desc {
+  color: white;
+  font-family: Roboto, HelveticaNeue, Arial, sans-serif;
+  margin-top: 0;
+}

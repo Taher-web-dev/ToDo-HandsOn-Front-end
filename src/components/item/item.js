@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { addAlert } from '../../Redux/alert/alert';
 import updateTask from './itemhelper';
+import { thunkTasks } from '../../Redux/tasks/thunk/thunk';
 import './item.css';
 
 const Item = (props) => {
@@ -15,7 +16,8 @@ const Item = (props) => {
   const { id, done, description } = props;
   const taskFulfilled = async (e) => {
     const { checked } = e.target;
-    const taskItem = document.querySelector('.task-desc');
+    const container = e.target.parentNode.parentNode;
+    const taskItem = container.querySelector('.task-desc');
     if (checked) {
       taskItem.style.textDecoration = 'line-through 3px rgb(0, 0, 255)';
     } else {
@@ -35,16 +37,16 @@ const Item = (props) => {
       } else {
         taskItem.style.textDecoration = 'none';
       }
-      dispatch(addAlert(message));
     }
+    dispatch(addAlert(message));
   };
   const editTask = (e) => {
     e.target.style.display = 'none';
-    const wrapper = document.querySelector('.item-wrapper');
+    const wrapper = e.target.parentNode;
     wrapper.style.backgroundColor = '#f8f8f8';
-    const deleteIcon = document.querySelector('.delete-icon');
+    const deleteIcon = wrapper.querySelector('.delete-icon');
     deleteIcon.style.display = 'block';
-    const taskDescription = document.querySelector('.task-desc');
+    const taskDescription = wrapper.querySelector('.task-desc');
     taskDescription.disabled = false;
     taskDescription.addEventListener('change', async (event) => {
       const elem = event.target;
@@ -60,8 +62,8 @@ const Item = (props) => {
       const result = await resp.json();
       const { status, message } = result;
       if (status === 'Error') {
-        // dispatch action to update tasks from back-end
         dispatch(addAlert(message));
+        dispatch(thunkTasks());
       }
     });
     taskDescription.addEventListener('keydown', async (event) => {
@@ -79,8 +81,8 @@ const Item = (props) => {
         const result = await resp.json();
         const { status, message } = result;
         if (status === 'Error') {
-          // dispatch action to update tasks from back-end
           dispatch(addAlert(message));
+          dispatch(thunkTasks());
         }
       }
     });
