@@ -10,6 +10,7 @@ const App = () => {
   const dispatch = useDispatch();
   const alert = useSelector((state) => state.alert);
   const resetMessage = () => dispatch(resetAlert());
+  const itemState = useSelector((state) => state.item);
   setTimeout(resetMessage, 5000);
   useEffect(() => dispatch(thunkTasks()), []);
   const adjustSize = () => {
@@ -20,7 +21,7 @@ const App = () => {
   useEffect(() => adjustSize(), []);
   return (
     <div className="app-wrapper">
-      <Todo />
+      { itemState === 'display' && (<Todo />)}
       <div className="app-description">
         {
         alert
