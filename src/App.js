@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Alert from 'react-bootstrap/Alert';
 import Todo from './components/todo/todo';
+import AddItem from './components/addItem/addItem';
 import { thunkTasks } from './Redux/tasks/thunk/thunk';
 import { resetAlert } from './Redux/alert/alert';
 import './app.css';
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <div className="app-wrapper">
       { itemState === 'display' && (<Todo />)}
+      { itemState === 'add' && (<AddItem />)}
       <div className="app-description">
         {
         alert
