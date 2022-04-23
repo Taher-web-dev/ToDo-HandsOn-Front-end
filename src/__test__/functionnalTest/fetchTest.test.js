@@ -1,9 +1,9 @@
-import { updateTask } from '../../components/item/itemhelper';
+import { updateTask, deleteTask } from '../../components/item/itemhelper';
 import { fetchTasks } from '../../Redux/tasks/thunk/thunk';
 
 describe('update task with given data', () => {
   test('update Task given correct data', async () => {
-    const id = 1;
+    const id = 5;
     const task = {
       done: true,
     };
@@ -19,5 +19,14 @@ describe('fetch tasks from the back-end', () => {
     const result = await fetchTasks();
     const res = await result.json();
     expect(res).toBeInstanceOf(Object);
+  });
+});
+
+describe('delete task given his id', () => {
+  test('delete task successfully', async () => {
+    const result = await deleteTask(6);
+    const res = await result.json();
+    const { status } = res;
+    expect(status).toBe('SUCCESS');
   });
 });

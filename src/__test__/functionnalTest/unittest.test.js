@@ -3,7 +3,7 @@ import { getTodaytask, fulfilledTaskcompter } from '../../components/todo/todohe
 
 describe('getCurrentDate', () => {
   test('getCurrentDate give right result', () => {
-    expect(getCurrentDate()).toStrictEqual(['Thursday', 21, 'April']);
+    expect(getCurrentDate()).toStrictEqual(['Saturday', 23, 'April']);
   });
 });
 
@@ -27,7 +27,7 @@ describe('getTodaytask', () => {
           id: 5,
           description: 'work on my project',
           done: true,
-          day: '2022-04-21',
+          day: '2022-04-23',
         },
       ],
     };
@@ -36,7 +36,7 @@ describe('getTodaytask', () => {
       id: 5,
       description: 'work on my project',
       done: true,
-      day: '2022-04-21',
+      day: '2022-04-23',
     }]);
   });
 });
