@@ -49,10 +49,15 @@ const Item = (props) => {
       dispatch(thunkTasks());
     }
   };
-  const deleteTask = (e)=> {
-    const task = e.target.parentNode;
-
-  }
+  const deleteTaskhandler = async () => {
+    const res = await deleteTask(id);
+    const result = await res.json();
+    const { status, message } = result;
+    if (status === 'SUCCESS') {
+      dispatch(thunkTasks());
+    }
+    dispatch(addAlert(message));
+  };
   const editTask = (e) => {
     e.target.style.display = 'none';
     const wrapper = e.target.parentNode;
@@ -111,7 +116,7 @@ const Item = (props) => {
       <Checkbox {...label} Checked={done} className="ckeck-icon" onChange={taskFulfilled} />
       <input disabled style={{ textDecoration: done ? 'line-through 3px rgb(0, 0, 255)' : 'none' }} className="task-desc" defaultValue={description} />
       <MoreVertIcon className="edit-icon" onClick={editTask} />
-      <DeleteIcon style={{ display: 'none' }} className="delete-icon" onClick={deleteTask} />
+      <DeleteIcon style={{ display: 'none' }} className="delete-icon" onClick={deleteTaskhandler} />
     </div>
   );
 };
