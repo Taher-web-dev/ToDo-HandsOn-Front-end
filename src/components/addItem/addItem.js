@@ -14,10 +14,13 @@ const AddItem = () => {
   const changeColor = (e) => {
     e.target.classList.add('change-input');
   };
+  const backHandler = () => {
+    dispatch(displayItem());
+  };
   return (
     <div className="addItem-wrapper">
       <header className="header-wrapper">
-        <ArrowBackIcon className="back-icon" style={{ color: 'rgb(56, 142, 204)' }} />
+        <ArrowBackIcon className="back-icon" style={{ color: 'rgb(56, 142, 204)' }} onClick={backHandler} />
         <Typography variant="h6" className="add-thing-title">Add new thing </Typography>
       </header>
       <img src={TODO} alt="todo-icon" className="things-icon" />
