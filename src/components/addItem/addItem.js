@@ -4,17 +4,30 @@ import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
 import TODO from '../../assets/images/todo.png';
 import { displayItem } from '../../Redux/item/item';
+import { addAlert } from '../../Redux/alert/alert';
+import { thunkTasks } from '../../Redux/tasks/thunk/thunk';
+import addTask from './addItemhelper';
 import './addItem.css';
 
 const AddItem = () => {
   const dispatch = useDispatch();
-  const addHandler = () => {
+  const addHandler = async (e) => {
+    e.preventDefault();
     const inputsData = Array.from(document.querySelectorAll('.input-data'));
     const textData = inputsData[0].value;
     const dateData = inputsData[1].value;
-    console.log(textData);
-    console.log(dateData);
-    /* dispatch(displayItem()); */
+    if ((textData !== '') && (dateData !== '')) {
+      const request = await addTask(textData, dateData);
+      const result = await request.json();
+      const { status, message } = result;
+      if (status === 'SUCCESS') {
+        dispatch(displayItem());
+        dispatch(thunkTasks());
+      }
+      dispatch(addAlert(message));
+    } else {
+      dispatch(addAlert('Please fill required fields!'));
+    }
   };
   const changeColor = (e) => {
     e.target.classList.add('change-input');

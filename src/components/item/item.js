@@ -59,8 +59,12 @@ const Item = (props) => {
     dispatch(addAlert(message));
   };
   const editTask = (e) => {
-    e.target.style.display = 'none';
-    const wrapper = e.target.parentNode;
+    let tar = e.target;
+    if (!Array.from(tar.classList).includes('edit-icon')) {
+      tar = tar.parentNode;
+    }
+    tar.style.display = 'none';
+    const wrapper = tar.parentNode;
     wrapper.style.backgroundColor = '#f8f8f8';
     const deleteIcon = wrapper.querySelector('.delete-icon');
     deleteIcon.style.display = 'block';
@@ -69,7 +73,7 @@ const Item = (props) => {
     taskDescription.addEventListener('change', async (event) => {
       const elem = event.target;
       elem.disabled = true;
-      e.target.style.display = 'block';
+      tar.style.display = 'block';
       deleteIcon.style.display = 'none';
       wrapper.style.backgroundColor = '#fff';
       const description = elem.value;
@@ -91,7 +95,7 @@ const Item = (props) => {
       if (event.keyCode === 13) {
         const elem = event.target;
         elem.disabled = true;
-        e.target.style.display = 'block';
+        tar.style.display = 'block';
         deleteIcon.style.display = 'none';
         wrapper.style.backgroundColor = '#fff';
         const description = elem.value;

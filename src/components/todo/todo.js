@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Typography } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
@@ -17,6 +17,18 @@ const Todo = () => {
   const switchToadd = () => {
     dispatch(addItem());
   };
+  const adjustbtn = () => {
+    const btn = document.querySelector('.add-task-btn');
+    const wrapper = document.querySelector('.functional-part');
+    if (total < 4) {
+      btn.style.position = 'absolute';
+      wrapper.style.position = 'relative';
+    } else {
+      btn.style.position = 'relative';
+      wrapper.style.position = 'static';
+    }
+  };
+  useEffect(() => adjustbtn(), [tasks]);
   return (
     <div className="todo-wrapper">
       <Header total={total} done={fulfilleds} />
