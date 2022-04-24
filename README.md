@@ -16,7 +16,7 @@ Desktop-Add-Item
 
 
 ## Front-end Live Demo
-> Click [here](https://mic-car-rental.netlify.app/) to see the live preview of the project.
+> Click [here](https://todo-handson.netlify.app/) to see the live preview of the project.
 
 > [link to Backend](https://github.com/Taher-web-dev/ToDo-HandsOn)
 
