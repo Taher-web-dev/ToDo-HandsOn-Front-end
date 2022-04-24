@@ -12,7 +12,7 @@ const App = () => {
   const alert = useSelector((state) => state.alert);
   const resetMessage = () => dispatch(resetAlert());
   const itemState = useSelector((state) => state.item);
-  setTimeout(resetMessage, 5000);
+  setTimeout(resetMessage, 10000);
   useEffect(() => dispatch(thunkTasks()), []);
   const adjustSize = () => {
     const h = window.innerHeight;
@@ -28,7 +28,7 @@ const App = () => {
         {
         alert
         && (
-        <Alert variant="warning">
+        <Alert variant="warning" style={{ minWidth: '60%', textAlign: 'center' }}>
           { alert }
         </Alert>
         )

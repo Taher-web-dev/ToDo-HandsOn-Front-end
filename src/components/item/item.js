@@ -41,9 +41,9 @@ const Item = (props) => {
     } else {
       let msg;
       if (checked) {
-        msg = 'Task updated successfully to fullfilled.';
+        msg = 'Task updated to fullfilled successfully.';
       } else {
-        msg = 'Task updated successfully to not fulfilled.';
+        msg = 'Task updated to not fulfilled successfully.';
       }
       dispatch(addAlert(msg));
       dispatch(thunkTasks());
