@@ -16,9 +16,9 @@ describe('Render correctly addItem component', () => {
     });
     store.dispatch = jest.fn();
     tree = render(
-      <Provider store = {store}>
+      <Provider store={store}>
         <AddItem />
-      </Provider>
+      </Provider>,
     );
   });
   it('should render with given state from redux store', () => {

@@ -18,7 +18,7 @@ describe('Render correctly addItem component', () => {
     tree = render(
       <Provider store={store}>
         <Item />
-      </Provider>
+      </Provider>,
     );
   });
   it('should render with given state from redux store', () => {
