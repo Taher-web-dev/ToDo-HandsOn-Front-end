@@ -3,12 +3,40 @@ import { getTodaytask, fulfilledTaskcompter } from '../../components/todo/todohe
 
 describe('getCurrentDate', () => {
   test('getCurrentDate give right result', () => {
-    expect(getCurrentDate()).toStrictEqual(['Sunday', 24, 'April']);
+    const d = new Date();
+    const weekDay = [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+    ];
+    const yearMonths = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+    const currentDay = weekDay[d.getDay()];
+    const currentMonth = yearMonths[d.getMonth()];
+    expect(getCurrentDate()).toStrictEqual([currentDay, d.getDate(), currentMonth]);
   });
 });
 
 describe('getTodaytask', () => {
   test('getTodaytask return today tasks given an abject of tasks for different days.', () => {
+    const today = new Date();
+    const currentDay = `${today.getFullYear()}-${today.getMonth() + 1 < 10 ? `0${today.getMonth() + 1}` : today.getMonth() + 1}-${today.getDate()}`;
     const tasks = {
       data: [
         {
@@ -27,7 +55,7 @@ describe('getTodaytask', () => {
           id: 5,
           description: 'work on my project',
           done: true,
-          day: '2022-04-24',
+          day: currentDay,
         },
       ],
     };
@@ -36,7 +64,7 @@ describe('getTodaytask', () => {
       id: 5,
       description: 'work on my project',
       done: true,
-      day: '2022-04-24',
+      day: currentDay,
     }]);
   });
 });
