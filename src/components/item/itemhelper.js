@@ -15,7 +15,7 @@ export const deleteTask = (id) => {
   return (fetch(itemUrl, {
     method: 'DELETE',
     headers: {
-      'content-type': 'application/json', 
+      'content-type': 'application/json',
     },
   }));
 };

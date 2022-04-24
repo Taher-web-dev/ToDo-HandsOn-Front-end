@@ -1,0 +1,75 @@
+.addItem-wrapper {
+  width: 30%;
+  margin-left: 10%;
+  margin-right: 5%;
+  background-color: rgb(87, 76, 160);
+  min-height: 550px;
+}
+
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 5%;
+}
+
+.back-icon {
+  margin-left: 5%;
+  margin-right: 25%;
+}
+
+.add-thing-title {
+  color: white;
+}
+
+.things-icon {
+  margin-left: 42.5%;
+  width: 15%;
+  margin-top: 2.5%;
+  margin-bottom: 10%;
+}
+
+form {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.input-data {
+  width: 90%;
+  margin-left: 5%;
+  background-color: rgb(87, 76, 160);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  border-bottom-width: 1px;
+  margin-bottom: 10px;
+  color:white;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(0.4);
+}
+input::-webkit-datetime-edit {
+  filter: invert(0.4);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.input-data::placeholder {
+  color: rgb(116, 117, 118);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.change-input::-webkit-datetime-edit {
+  filter: invert(0);
+}
+
+.add-btn {
+  width: 90%;
+  margin-left: 5%;
+  background-color: rgb(46, 186, 238);
+  color: white;
+  border-color: rgb(46, 186, 238);
+  margin-top: 100px;
+  padding: 1.25% 0;
+  border-radius: 4px;
+}
